@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg950\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html>\
+<head>\
+<meta charset="UTF-8">\
+<title>Chen AI \uc0\u55358 \u56598 </title>\
+\
+<style>\
+body \{\
+    font-family: Arial;\
+    background: black;\
+    color: white;\
+    text-align: center;\
+\}\
+\
+.container \{\
+    width: 400px;\
+    margin: 50px auto;\
+\}\
+\
+#chat \{\
+    height: 300px;\
+    overflow-y: auto;\
+    border: 1px solid gray;\
+    padding: 10px;\
+\}\
+\
+input \{\
+    width: 70%;\
+    padding: 10px;\
+\}\
+\
+button \{\
+    padding: 10px;\
+\}\
+</style>\
+</head>\
+\
+<body>\
+\
+<div class="container">\
+<h1>Chen AI \uc0\u55358 \u56598 </h1>\
+\
+<div id="chat"></div>\
+\
+<input id="msg" placeholder="Say something...">\
+<button onclick="send()">Send</button>\
+\
+</div>\
+\
+<script>\
+function send()\{\
+    let input = document.getElementById("msg");\
+    let chat = document.getElementById("chat");\
+\
+    let userMsg = input.value;\
+    if(userMsg=="") return;\
+\
+    chat.innerHTML += "<p>\uc0\u55358 \u56785 : " + userMsg + "</p>";\
+\
+    let reply = getReply(userMsg);\
+\
+    setTimeout(()=>\{\
+        chat.innerHTML += "<p>\uc0\u55358 \u56598 : " + reply + "</p>";\
+        chat.scrollTop = chat.scrollHeight;\
+    \}, 500);\
+\
+    input.value="";\
+\}\
+\
+function getReply(msg)\{\
+    msg = msg.toLowerCase();\
+\
+    if(msg.includes("hello")) return "Hello \uc0\u55357 \u56395 ";\
+    if(msg.includes("hi")) return "Hi there!";\
+    if(msg.includes("name")) return "I am Chen AI \uc0\u55358 \u56598 ";\
+    if(msg.includes("bye")) return "Goodbye!";\
+    if(msg.includes("\uc0\u20320 ")) return "\u20320 \u22909 \u65281 \u25105 \u26159  AI \u55358 \u56598 ";\
+    if(msg.includes("\uc0\u12371 \u12435 \u12395 \u12385 \u12399 ")) return "\u12371 \u12435 \u12395 \u12385 \u12399 \u65281 ";\
+\
+    return "Hmm... interesting \uc0\u55358 \u56596 ";\
+\}\
+</script>\
+\
+</body>\
+</html>}
